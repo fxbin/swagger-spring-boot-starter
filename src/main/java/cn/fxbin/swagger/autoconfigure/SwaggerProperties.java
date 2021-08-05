@@ -60,12 +60,12 @@ public class SwaggerProperties {
     /**
      * 许可证
      */
-    private String license = "BubbleFireworks";
+    private String license = "";
 
     /**
      * 许可证url
      */
-    private String licenseUrl = "https://github.com/fxbin/bubble-fireworks";
+    private String licenseUrl = "https://github.com/fxbin/swagger-spring-boot-starter";
 
     /**
      * swagger会解析的包路径
