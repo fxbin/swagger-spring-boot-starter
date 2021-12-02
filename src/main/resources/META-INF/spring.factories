@@ -1,6 +1,6 @@
 ## Auto Configure
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
 cn.fxbin.swagger.autoconfigure.SwaggerAutoConfiguration,\
-cn.fxbin.swagger.autoconfigure.web.SwaggerWebAutoConfiguration,\
-cn.fxbin.swagger.autoconfigure.webflux.RouterFunctionConfiguration,\
-cn.fxbin.swagger.autoconfigure.webflux.SwaggerWebFluxAutoConfiguration
+cn.fxbin.swagger.autoconfigure.SwaggerWebAutoConfiguration,\
+cn.fxbin.swagger.autoconfigure.RouterFunctionConfiguration,\
+cn.fxbin.swagger.autoconfigure.SwaggerWebFluxAutoConfiguration

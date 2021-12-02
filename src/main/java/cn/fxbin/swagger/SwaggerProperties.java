@@ -1,11 +1,10 @@
-package cn.fxbin.swagger.autoconfigure;
+package cn.fxbin.swagger;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.cloud.context.config.annotation.RefreshScope;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +17,6 @@ import java.util.List;
  * @since 2020/3/31 17:35
  */
 @Data
-@RefreshScope
 @ConfigurationProperties(prefix = SwaggerProperties.SPRING_SWAGGER_PREFIX)
 public class SwaggerProperties {
 
@@ -75,12 +73,12 @@ public class SwaggerProperties {
     /**
      * swagger会解析的url规则
      */
-    private List<String> basePath = new ArrayList<String>();
+    private List<String> basePath = new ArrayList<>();
 
     /**
      * 基于base path需要排除的url规则
      */
-    private List<String> excludeBasePath = new ArrayList<String>();
+    private List<String> excludeBasePath = new ArrayList<>();
 
     /**
      * 联系人信息

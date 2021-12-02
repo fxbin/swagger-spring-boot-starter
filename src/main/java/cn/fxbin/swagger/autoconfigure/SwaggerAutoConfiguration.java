@@ -1,5 +1,6 @@
 package cn.fxbin.swagger.autoconfigure;
 
+import cn.fxbin.swagger.SwaggerProperties;
 import com.github.xiaoymin.knife4j.spring.annotations.EnableKnife4j;
 import com.github.xiaoymin.knife4j.spring.configuration.Knife4jAutoConfiguration;
 import org.springframework.boot.autoconfigure.AutoConfigureBefore;
@@ -29,7 +30,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
-import static cn.fxbin.swagger.autoconfigure.SwaggerProperties.SPRING_SWAGGER_PREFIX;
+import static cn.fxbin.swagger.SwaggerProperties.SPRING_SWAGGER_PREFIX;
 
 /**
  * SwaggerAutoConfiguration
@@ -148,7 +149,11 @@ public class SwaggerAutoConfiguration {
      * @return springfox.documentation.service.ApiKey
      */
     private ApiKey apiKey() {
-        return new ApiKey(properties.getAuthorization().getName(), properties.getAuthorization().getKeyName(), ApiKeyVehicle.HEADER.getValue());
+        return new ApiKey(
+                properties.getAuthorization().getName(),
+                properties.getAuthorization().getKeyName(),
+                ApiKeyVehicle.HEADER.getValue()
+        );
     }
 
 
@@ -160,10 +165,10 @@ public class SwaggerAutoConfiguration {
      * @return springfox.documentation.spi.service.contexts.SecurityContext
      */
     private SecurityContext securityContext() {
-        return SecurityContext.builder()
-                .securityReferences(this.defaultAuth())
-                .forPaths(PathSelectors.regex(properties.getAuthorization().getAuthRegex()))
-                .build();
+        return new SecurityContext(this.defaultAuth(),
+                PathSelectors.regex(properties.getAuthorization().getAuthRegex()),
+                null,
+                null);
     }
 
 

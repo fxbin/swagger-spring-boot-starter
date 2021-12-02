@@ -1,4 +1,4 @@
-package cn.fxbin.swagger.autoconfigure.webflux;
+package cn.fxbin.swagger.webflux;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;

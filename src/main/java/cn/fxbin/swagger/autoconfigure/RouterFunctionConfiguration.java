@@ -1,5 +1,8 @@
-package cn.fxbin.swagger.autoconfigure.webflux;
+package cn.fxbin.swagger.autoconfigure;
 
+import cn.fxbin.swagger.webflux.SwaggerResourceHandler;
+import cn.fxbin.swagger.webflux.SwaggerSecurityHandler;
+import cn.fxbin.swagger.webflux.SwaggerUiHandler;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
@@ -14,7 +17,7 @@ import springfox.documentation.spring.web.plugins.Docket;
 
 import javax.annotation.Resource;
 
-import static cn.fxbin.swagger.autoconfigure.SwaggerProperties.SPRING_SWAGGER_PREFIX;
+import static cn.fxbin.swagger.SwaggerProperties.SPRING_SWAGGER_PREFIX;
 import static org.springframework.web.reactive.function.server.RequestPredicates.GET;
 import static org.springframework.web.reactive.function.server.RequestPredicates.accept;
 
@@ -29,7 +32,7 @@ import static org.springframework.web.reactive.function.server.RequestPredicates
         proxyBeanMethods = false
 )
 @ComponentScan(
-        basePackages = {"cn.fxbin.swagger.autoconfigure.webflux"}
+        basePackages = {"cn.fxbin.swagger.webflux"}
 )
 @ConditionalOnClass({Docket.class, RouterFunction.class})
 @ConditionalOnWebApplication(type = Type.REACTIVE)

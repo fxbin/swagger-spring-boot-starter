@@ -1,4 +1,4 @@
-package cn.fxbin.swagger.autoconfigure.webflux;
+package cn.fxbin.swagger.webflux;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
@@ -10,13 +10,13 @@ import org.springframework.web.reactive.function.server.HandlerFunction;
 import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Mono;
-import springfox.documentation.swagger.web.SecurityConfiguration;
-import springfox.documentation.swagger.web.SecurityConfigurationBuilder;
+import springfox.documentation.swagger.web.UiConfiguration;
+import springfox.documentation.swagger.web.UiConfigurationBuilder;
 
 import java.util.Optional;
 
 /**
- * SwaggerSecurityHandler
+ * SwaggerUiHandler
  *
  * @author fxbin
  * @version v1.0
@@ -25,18 +25,17 @@ import java.util.Optional;
 @SuppressWarnings("ALL")
 @Component
 @ConditionalOnClass({HandlerFunction.class})
-public class SwaggerSecurityHandler implements HandlerFunction<ServerResponse> {
-
+public class SwaggerUiHandler implements HandlerFunction<ServerResponse> {
 
     @Autowired(required = false)
-    private SecurityConfiguration securityConfiguration;
+    private UiConfiguration uiConfiguration;
 
     @Override
     public Mono<ServerResponse> handle(ServerRequest request) {
         return ServerResponse.status(HttpStatus.OK)
                 .contentType(MediaType.APPLICATION_JSON)
                 .body(BodyInserters.fromValue(
-                        Optional.ofNullable(securityConfiguration)
-                                .orElse(SecurityConfigurationBuilder.builder().build())));
+                        Optional.ofNullable(uiConfiguration)
+                                .orElse(UiConfigurationBuilder.builder().build())));
     }
 }

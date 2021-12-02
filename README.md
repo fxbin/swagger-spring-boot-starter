@@ -23,12 +23,14 @@
 
 ## 使用步骤
 
+PS: `最新版为1.1`
+
 1. 添加 maven 依赖
 ```xml
 <dependency>
     <groupId>cn.fxbin.swagger</groupId>
     <artifactId>swagger-spring-boot-starter</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>${currentVersion}</version>
 </dependency>
 ```
 PS: 已发布中央仓库，可直接引用

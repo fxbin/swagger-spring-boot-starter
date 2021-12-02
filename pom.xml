@@ -10,7 +10,7 @@
 
     <groupId>cn.fxbin.swagger</groupId>
     <artifactId>swagger-spring-boot-starter</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.1</version>
     <packaging>jar</packaging>
     <name>swagger-spring-boot-starter</name>
     <description>springboot starter for swagger</description>
@@ -44,7 +44,7 @@
 
     <properties>
         <!-- Build -->
-        <java.version>11</java.version>
+        <java.version>8</java.version>
         <java.encoding>UTF-8</java.encoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -91,10 +91,6 @@
         <dependency>
             <groupId>com.github.xiaoymin</groupId>
             <artifactId>knife4j-spring-boot-starter</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-context</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -156,12 +152,6 @@
             <id>java8</id>
             <activation>
                 <jdk>[1.8,)</jdk>
-            </activation>
-        </profile>
-        <profile>
-            <id>java11</id>
-            <activation>
-                <jdk>[11,)</jdk>
             </activation>
         </profile>
         <profile>

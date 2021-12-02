@@ -1,6 +1,6 @@
-package cn.fxbin.swagger.autoconfigure.web;
+package cn.fxbin.swagger.autoconfigure;
 
-import cn.fxbin.swagger.autoconfigure.SwaggerProperties;
+import cn.fxbin.swagger.SwaggerProperties;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
@@ -13,7 +13,7 @@ import springfox.documentation.swagger.configuration.SwaggerCommonConfiguration;
 import springfox.documentation.swagger2.configuration.Swagger2WebMvcConfiguration;
 import springfox.documentation.swagger2.web.Swagger2ControllerWebMvc;
 
-import static cn.fxbin.swagger.autoconfigure.SwaggerProperties.SPRING_SWAGGER_PREFIX;
+import static cn.fxbin.swagger.SwaggerProperties.SPRING_SWAGGER_PREFIX;
 
 /**
  * SwaggerWebAutoConfiguration

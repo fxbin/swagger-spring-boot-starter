@@ -1,6 +1,6 @@
-package cn.fxbin.swagger.autoconfigure.webflux;
+package cn.fxbin.swagger.webflux;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -10,32 +10,28 @@ import org.springframework.web.reactive.function.server.HandlerFunction;
 import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Mono;
-import springfox.documentation.swagger.web.UiConfiguration;
-import springfox.documentation.swagger.web.UiConfigurationBuilder;
-
-import java.util.Optional;
+import springfox.documentation.swagger.web.SwaggerResourcesProvider;
 
 /**
- * SwaggerUiHandler
+ * SwaggerResourceHandler
  *
  * @author fxbin
  * @version v1.0
- * @since 2020/4/3 10:44
+ * @since 2020/4/3 10:43
  */
-@SuppressWarnings("ALL")
 @Component
+@AllArgsConstructor
 @ConditionalOnClass({HandlerFunction.class})
-public class SwaggerUiHandler implements HandlerFunction<ServerResponse> {
+public class SwaggerResourceHandler implements HandlerFunction<ServerResponse> {
 
-    @Autowired(required = false)
-    private UiConfiguration uiConfiguration;
+    private final SwaggerResourcesProvider swaggerResourcesProvider;
 
+    @SuppressWarnings("NullableProblems")
     @Override
     public Mono<ServerResponse> handle(ServerRequest request) {
         return ServerResponse.status(HttpStatus.OK)
                 .contentType(MediaType.APPLICATION_JSON)
-                .body(BodyInserters.fromValue(
-                        Optional.ofNullable(uiConfiguration)
-                                .orElse(UiConfigurationBuilder.builder().build())));
+                .body(BodyInserters.fromValue(swaggerResourcesProvider.get()));
     }
+
 }

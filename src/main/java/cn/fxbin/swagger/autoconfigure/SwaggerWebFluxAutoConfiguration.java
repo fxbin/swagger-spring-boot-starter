@@ -1,12 +1,13 @@
-package cn.fxbin.swagger.autoconfigure.webflux;
+package cn.fxbin.swagger.autoconfigure;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication.Type;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.reactive.config.ResourceHandlerRegistry;
 import org.springframework.web.reactive.config.WebFluxConfigurer;
 
-import static cn.fxbin.swagger.autoconfigure.SwaggerProperties.SPRING_SWAGGER_PREFIX;
+import static cn.fxbin.swagger.SwaggerProperties.SPRING_SWAGGER_PREFIX;
 
 /**
  * SwaggerWebFluxAutoConfiguration
@@ -18,7 +19,7 @@ import static cn.fxbin.swagger.autoconfigure.SwaggerProperties.SPRING_SWAGGER_PR
 @Configuration(
         proxyBeanMethods = false
 )
-@ConditionalOnWebApplication(type = ConditionalOnWebApplication.Type.REACTIVE)
+@ConditionalOnWebApplication(type = Type.REACTIVE)
 @ConditionalOnProperty(prefix = SPRING_SWAGGER_PREFIX, name = "enabled", havingValue = "true")
 public class SwaggerWebFluxAutoConfiguration implements WebFluxConfigurer {
 
