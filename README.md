@@ -6,9 +6,8 @@
 [![springfox](https://img.shields.io/badge/springfox-3.0.3-brightgreen.svg)](https://github.com/springfox/springfox)
 
 
-
-自制 swagger spring-boot-starter, 默认集成 knife4j, 界面更加友好，同时使用便捷，使你解脱书写API文档的烦恼...
-
+自制 swagger spring-boot-starter, 默认集成 knife4j, 界面更加友好，同时使用便捷，
+一键集成sringboot 项目，同时支持一键开启网关聚合功能，使你解脱书写、配置API文档的烦恼...
 
 
 | 依赖 | 版本 |
@@ -23,7 +22,7 @@
 
 ## 使用步骤
 
-PS: `最新版为1.1`
+PS: `最新版为1.2`
 
 1. 添加 maven 依赖
 ```xml
@@ -47,6 +46,9 @@ spring:
 
 ![配置属性](doc/swagger%20配置属性.png)
 
+## 其它注意事项
+
+与网关集成时，默认按照 `spring.cloud.gateway.discovery.locator.enabled` 配置项来决定是否开启动态文档，默认读取文件配置
 
 ## 参考文档
 [knife4j doc](https://doc.xiaominfo.com/knife4j/)
