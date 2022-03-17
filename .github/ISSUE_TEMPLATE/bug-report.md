@@ -1,18 +1,33 @@
-### 使用版本:
-请提供一下版本号
+---
+name: "\U0001F41E Bug report"
+about: Create a report to help us improve
+title: "[Bug] "
+labels: bug
+assignees: fxbin
 
+---
 
-### 报错信息：
-请提供报错的详细信息
+**Describe the bug**
+A clear and concise description of what the bug is.
 
+**Your Environment**
+<!-- 🔅🔅🔅🔅🔅🔅🔅 Choose one of the following or write your own 🔅🔅🔅🔅🔅🔅🔅-->
 
-### 希望结果：
-相比于已发生的报错，您希望看到什么样的运行结果
+* Browser [e.g. chrome, safari]
+* Version [e.g. 22]
 
+**To Reproduce**
+Steps to reproduce the behavior:
+1. Go to '...'
+2. Click on '....'
+3. Scroll down to '....'
+4. See error
 
-### 复现步骤：
-如果复现步骤比较复杂，请将 demo 上传到 git 并留下地址
+**Expected behavior**
+A clear and concise description of what you expected to happen.
 
+**Screenshots**
+If applicable, add screenshots to help explain your problem.
 
-备注：您提供的信息越充足，我们将越能快速的定位错误 
-
+**Additional context**
+Add any other context about the problem here.
