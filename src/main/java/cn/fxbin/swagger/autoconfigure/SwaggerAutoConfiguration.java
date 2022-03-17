@@ -76,7 +76,6 @@ public class SwaggerAutoConfiguration {
      * @return springfox.documentation.spring.web.plugins.Docket
      */
     @Bean
-    @ConditionalOnProperty(prefix = SPRING_SWAGGER_PREFIX, name = "enabled", havingValue = "true")
     public Docket docket() {
 
         // base path 处理
