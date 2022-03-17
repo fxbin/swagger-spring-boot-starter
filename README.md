@@ -1,5 +1,5 @@
 # swagger-spring-boot-starter
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/63f51f8ee55f42bd8284c1c04e2b6f7d)](https://app.codacy.com/manual/fxbin/swagger-spring-boot-starter?utm_source=github.com&utm_medium=referral&utm_content=fxbin/swagger-spring-boot-starter&utm_campaign=Badge_Grade_Settings)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/70cd38871b8041f0a4f9c93d44c59c93)](https://www.codacy.com/gh/fxbin/swagger-spring-boot-starter/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=fxbin/swagger-spring-boot-starter&amp;utm_campaign=Badge_Grade)
 [![Spring Boot](https://img.shields.io/badge/SpringBoot-2.5.3-brightgreen.svg)](https://github.com/spring-projects/spring-boot)
 [![Spring Cloud](https://img.shields.io/badge/SpringCloud-2020.0.3-brightgreen.svg)](https://github.com/spring-cloud)
 [![Knife4j](https://img.shields.io/badge/Knife4j-3.0.3-brightgreen.svg)](https://gitee.com/xiaoym/knife4j)
