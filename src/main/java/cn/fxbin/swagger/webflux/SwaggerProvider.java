@@ -36,7 +36,7 @@ import java.util.stream.Collectors;
 @ConditionalOnClass({HandlerFunction.class})
 public class SwaggerProvider implements SwaggerResourcesProvider {
 
-    private static final String API_URI = "/v2/api-docs";
+    private static final String API_URI = "/v3/api-docs";
 
     @Resource
     private GatewayProperties gatewayProperties;

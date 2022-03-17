@@ -4,3 +4,8 @@ cn.fxbin.swagger.autoconfigure.SwaggerAutoConfiguration,\
 cn.fxbin.swagger.autoconfigure.SwaggerWebAutoConfiguration,\
 cn.fxbin.swagger.autoconfigure.RouterFunctionConfiguration,\
 cn.fxbin.swagger.autoconfigure.SwaggerWebFluxAutoConfiguration
+
+
+# Environment Post Processors
+org.springframework.boot.env.EnvironmentPostProcessor=\
+cn.fxbin.swagger.autoconfigure.DocumentationPropertyEnvironmentPostProcessor

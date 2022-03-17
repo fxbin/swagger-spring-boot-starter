@@ -1,7 +1,6 @@
 package cn.fxbin.swagger.autoconfigure;
 
 import cn.fxbin.swagger.SwaggerProperties;
-import com.github.xiaoymin.knife4j.spring.annotations.EnableKnife4j;
 import com.github.xiaoymin.knife4j.spring.configuration.Knife4jAutoConfiguration;
 import org.springframework.boot.autoconfigure.AutoConfigureBefore;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
@@ -16,7 +15,6 @@ import springfox.bean.validators.configuration.BeanValidatorPluginsConfiguration
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
-import springfox.documentation.oas.annotations.EnableOpenApi;
 import springfox.documentation.service.*;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spi.service.contexts.SecurityContext;
@@ -39,8 +37,6 @@ import static cn.fxbin.swagger.SwaggerProperties.SPRING_SWAGGER_PREFIX;
  * @version v1.0
  * @since 2020/3/31 18:00
  */
-@EnableKnife4j
-@EnableOpenApi
 @Configuration(
         proxyBeanMethods = false
 )
@@ -80,6 +76,7 @@ public class SwaggerAutoConfiguration {
      * @return springfox.documentation.spring.web.plugins.Docket
      */
     @Bean
+    @ConditionalOnProperty(prefix = SPRING_SWAGGER_PREFIX, name = "enabled", havingValue = "true")
     public Docket docket() {
 
         // base path 处理
@@ -92,7 +89,7 @@ public class SwaggerAutoConfiguration {
             properties.getExcludeBasePath().addAll(DEFAULT_EXCLUDE_PATH);
         }
 
-        ApiSelectorBuilder builder = new Docket(DocumentationType.SWAGGER_2)
+        ApiSelectorBuilder builder = new Docket(DocumentationType.OAS_30)
                 .host(properties.getHost())
                 .apiInfo(apiInfo()).select()
                 .apis(RequestHandlerSelectors.basePackage(properties.getBasePackage()));
