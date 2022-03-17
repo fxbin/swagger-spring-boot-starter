@@ -3,20 +3,17 @@
 [![Spring Boot](https://img.shields.io/badge/SpringBoot-2.5.3-brightgreen.svg)](https://github.com/spring-projects/spring-boot)
 [![Spring Cloud](https://img.shields.io/badge/SpringCloud-2020.0.3-brightgreen.svg)](https://github.com/spring-cloud)
 [![Knife4j](https://img.shields.io/badge/Knife4j-3.0.3-brightgreen.svg)](https://gitee.com/xiaoym/knife4j)
-[![springfox](https://img.shields.io/badge/springfox-3.0.3-brightgreen.svg)](https://github.com/springfox/springfox)
 
+```
+自制 swagger spring-boot-starter, 默认集成 knife4j, 界面更加友好，同时使用便捷，一键集成sringboot 项目，
+同时支持一键开启网关聚合功能，使你解脱书写、配置Swagger API文档的烦恼...
+```
 
-自制 swagger spring-boot-starter, 默认集成 knife4j, 界面更加友好，同时使用便捷，
-一键集成sringboot 项目，同时支持一键开启网关聚合功能，使你解脱书写、配置API文档的烦恼...
-
-
-| 依赖 | 版本 |
----|---
-| Spring Boot |  2.5.2 |
-| Spring Cloud |  2020.0.3 | 
-| Spring Cloud Alibaba |  2021.1 |
-| Knife4j | 3.0.3 |  
-| springfox | 3.0.0 |  
+| 依赖 | 版本       |
+---|----------
+| Spring Boot | 2.5.3    |
+| Spring Cloud | 2020.0.3 | 
+| Knife4j | 3.0.3    |  
 
 * 注意： 笔者仅测试过如上版本的使用情况，低版本请自行测试
 
