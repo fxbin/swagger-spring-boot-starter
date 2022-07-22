@@ -37,6 +37,11 @@ PS: 已发布中央仓库，可直接引用
 spring:
   swagger:
     enabled: true
+
+  # 如果使用 2.6.X 以上版本，需增加如下配置，否则不生效
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
 ```
 
 更多配置属性参考：
